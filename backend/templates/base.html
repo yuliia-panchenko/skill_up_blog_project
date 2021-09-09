@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SkillUp</title>
+        <link rel="stylesheet" href="/static/css/styles.css"> 
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+        crossorigin="anonymous">
+    </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-navbar-light" style="background-color: #7ebbe7;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'posts' %}" style="color: #023152;">SkillUp blog</a>
+          <h5>Блог для изучающих программирование на Python</h5>
+           <div class="nav-right">
+                <a href="{% url 'post_new' %}">+ New Blog Post</a>
+           </div>
+        </div>
+    </nav>
+<div style="background: #b0c7d8;">
+
+{% if user.is_authenticated %}
+    <p>Hi {{ user.username }}!</p>
+    <p><a href="{% url 'logout' %}">Log out</a></p>
+{% else %}
+    <h5>You are not logged in.</h5>
+    <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+{% block content %}
+{% endblock content %}
+
+</div>
+</body>
+<!-- Footer -->
+<footer style="background: #7ebbe7">
+  <div class="copyright">
+    <p>&copy 2021 - SkillUp</p>
+  </div>
+  <div class="social">
+    <a href="#" class="support">Contact Us</a>
+    <a href="#" class="face">f</a>
+    <a href="#" class="tweet">t</a>
+    <a href="#" class="linked">in</a>
+  </div>
+</footer>
+</html>

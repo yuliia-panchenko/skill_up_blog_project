@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+/* .navbar {
+    padding: 30px 100px;
+    background-color: rgba(32, 32, 248, 0.788);
+    color: black;
+} */
+
+/* .header h1 {
+    display: inline;
+    font-size: 32px;
+    margin-right: 50px;
+}
+
+.header h2 {
+    display: inline;
+}
+
+.content h1 {
+    background-color: red;
+} */
+
+.content {
+    display: flex;
+    margin: 2% 3%;
+    flex-wrap: wrap;
+    width: 94%;
+    /* justify-content: center; */
+    justify-content: space-between;    
+}
+
+.content .post {
+    margin: 20px 5px;
+}
+
+

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+<!--Content container-->
+<div class="content">
+    {% for post in object_list %}
+
+        <div class="card post" style="width: 18rem;">
+            <img src="/static/images/python.png" class="card-img-top">
+            <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content }}</p>
+            <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Read the post</a>
+            </div>
+        </div>
+        
+    {% endfor %}
+</div>
+{% endblock content %}
